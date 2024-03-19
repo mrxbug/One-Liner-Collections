@@ -4,6 +4,11 @@ This Repositories contains list of One Liners with Descriptions and Installation
 ────────────────────────────────────────────────────────────────────────
 
 
+# filter subdomains by keywords
+
+cat subdomains.txt | egrep -i "internal|api|test|prod|private|secret|git|login|admin|staging|dev|jira|intranet|vip|portal|register|pass|reset" > priority.txt
+cat priority.txt | httpx -silent -o active_priority.txt
+dirsearch -l active_priority.txt --full-url -F -w mywordlist.txt
 
 # SQL Injection
 
